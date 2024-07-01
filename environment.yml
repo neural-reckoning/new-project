@@ -1,0 +1,15 @@
+name: newproject
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - ipywidgets
+  - ipympl
+  - pip
