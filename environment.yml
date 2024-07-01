@@ -8,7 +8,9 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
+  - pytorch
   - jupyter
+  - notebook
   - ipykernel
   - ipywidgets
   - ipympl

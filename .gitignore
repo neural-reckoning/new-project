@@ -163,3 +163,13 @@ cython_debug/
 
 # Ignore data directory
 data/
+
+# Latex
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.gz
+paper/*.out
+paper/*.fdb_latexmk
+paper/paper.pdf

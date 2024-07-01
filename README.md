@@ -6,21 +6,9 @@ Start by reading through [Patrick Mineault's Good Research Code Handbook](https:
 
 ## Install
 
-### Miniconda
-
-This is a small version of Anaconda with just the basics. Quicker to install than Anaconda and anyway you will make your own environments.
-
-[Download here](https://docs.anaconda.com/miniconda/).
-
-### vscode
-
-I know it's Microsoft but it's just a really good IDE and will save you a lot of headaches.
-
-[Download here](https://code.visualstudio.com/).
-
-### Copilot
-
-In vscode, just install the Copilot extension. Use your Imperial College credentials for free access.
+* [Miniconda](https://docs.anaconda.com/miniconda/). This is a small version of Anaconda with just the basics. Quicker to install than Anaconda and anyway you will make your own environments.
+* [vscode](https://code.visualstudio.com/). I know it's Microsoft but it's just a really good IDE and will save you a lot of headaches.
+* Copilot. In vscode, just install the Copilot extension. Use your Imperial College credentials for free access.
 
 ## Coding setup
 
@@ -50,19 +38,25 @@ Add new packages by editing the ``environment.yml`` file and then running:
 conda env update --file environment.yml  --prune
 ```
 
+Some interesting packages to note in the template ``environment.yml`` file are:
+
+* ``ipykernel``: Lets Jupyter notebook detect this environment. I always stick this in every environment I use.
+* ``pip`` and ``pip:``: These lines let you install some packages that don't have Conda versions using Pip
+* ``ipywidgets``: Interactive notebooks with sliders that recompute and regenerate figures, etc.
+
 ### Directory structure
 
 Here's how I chose to do it for this repo based on [Patrick Mineault's recommendation](https://goodresearch.dev/setup#create-a-project-skeleton):
 
 ```
-|-- data               (excluded from git in .gitignore)
-|-- docs
-|-- newproject         (reusable source code goes here, rename as appropriate)
-|-- paper              (latex source code if you're using that)
-|-- results            (exclude from git if it's heavy, can include if it's just some light csv files)
-|-- scripts            (Jupyter notebooks etc. go here)
-|-- tests
- -- .gitignore
+|-- scripts            Jupyter notebooks etc. go here
+|-- newproject         reusable source code goes here, rename as appropriate
+|-- paper              latex source code if you're using that
+|-- data               input datasets, etc. excluded from git in .gitignore
+|-- results            exclude from git if it's heavy, can include if it's just some light csv files
+|-- docs               this folder is aspirational
+|-- tests              so is this one
+ -- .gitignore         use this to list files that shouldn't be included in the repo, e.g. binaries
  -- environment.yml
  -- README.md
  -- setup.py
@@ -107,11 +101,14 @@ TODO
 
 ## Paper writing
 
-TODO (outline below)
+Using [Overleaf](https://www.overleaf.com) is probably in general the easiest way to work together on a paper. You can still use the latex files in the ``paper/`` directory of this repository to initialise your Overleaf document.
 
-* Use Overleaf or install TeX locally (or both!)
-* To use both, see [Overleaf Git integration](https://www.overleaf.com/learn/how-to/Git_integration).
-* Advantage of local development is you can use Copilot to help with the writing.
-* Supplementary materials in a separate file.
-* Generate diffs when responding to reviewer comments.
-* Use Zotero to track papers. Get BiBTeX by clicking a paper and pressing Ctrl-Shift-C to copy into clipboard, then paste that into ``.bib`` file.
+You can also install TeX locally (on Windows I recommend MiKTeX). "LaTeX Workshop" is an OK extension to vscode for working with LaTeX that will do things like rebuild each time you save and show the pdf in a panel, like Overleaf does. An advantage of local development is that you can use Copilot to help with the writing.
+
+You can also do both, see [Overleaf Git integration](https://www.overleaf.com/learn/how-to/Git_integration).
+
+Read through the ``paper.tex`` file and comments for good practices on writing LaTeX docs.
+
+A good way to organise the code is to have a separate ``supplementary.tex`` file for Supplmentary Materials because journals often ask for this. You can set up diffs by having a ``paper-old.tex`` and ``diff.tex`` file (useful for responding to reviews).
+
+For the bibliography, I recommend using Zotero to track papers. You can get BiBTeX by clicking a paper in Zotero and pressing Ctrl-Shift-C to copy into clipboard, then paste that into the ``.bib`` file.
