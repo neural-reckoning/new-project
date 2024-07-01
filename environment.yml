@@ -13,3 +13,5 @@ dependencies:
   - ipywidgets
   - ipympl
   - pip
+  - pip:
+    - tqdm

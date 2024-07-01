@@ -34,7 +34,38 @@ Then run:
 
 ```
 conda env create -f environment.yml
+```
+
+vscode will automatically pick up on this environment, or you can explicitly use it by doing:
+
+```
 conda activate newproject
+jupyter notebook
+...
+```
+
+Add new packages by editing the ``environment.yml`` file and then running:
+
+```
+conda env update --file environment.yml  --prune
+```
+
+### Directory structure
+
+Here's how I chose to do it for this repo based on [Patrick Mineault's recommendation](https://goodresearch.dev/setup#create-a-project-skeleton):
+
+```
+|-- data               (excluded from git in .gitignore)
+|-- docs
+|-- newproject         (reusable source code goes here, rename as appropriate)
+|-- paper              (latex source code if you're using that)
+|-- results            (exclude from git if it's heavy, can include if it's just some light csv files)
+|-- scripts            (Jupyter notebooks etc. go here)
+|-- tests
+ -- .gitignore
+ -- environment.yml
+ -- README.md
+ -- setup.py
 ```
 
 ### Setup installable project package
