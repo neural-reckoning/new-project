@@ -173,3 +173,4 @@ paper/*.gz
 paper/*.out
 paper/*.fdb_latexmk
 paper/paper.pdf
+paper/*.fls
