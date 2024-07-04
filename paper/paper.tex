@@ -112,11 +112,18 @@ Citations are great \citep{Goodman2009,perez-nieves_sparse_2021}.
     \label{eq:argmax}
 \end{equation}
 
-\Cref{eq:argmax} is a great equation (and so is \cref{eq:argmax}). If you use the \texttt{\textbackslash{}Cref} and \texttt{\textbackslash{}cref} commands from the \texttt{cleveref} package, you can automatically get the right kind of reference and it's easy to update if journal requirements are different without rewriting every reference by hand. Works for things like sections too, e.g. \cref{sec:results}.
+\Cref{eq:argmax} is a great equation (and so is \cref{eq:argmax}). If you use the \texttt{\textbackslash{}Cref} and \texttt{\textbackslash{}cref} commands from the \texttt{cleveref} package, you can automatically get the right kind of reference and it's easy to update if journal requirements are different without rewriting every reference by hand. Works for things like sections and figures too, e.g. \cref{sec:results}, \cref{fig:elephant}.
 
 Note on labels: use labels like \texttt{sec:introduction} to make it easy to see at a glance what you're referencing where. NEVER use a number in a label because your label \texttt{fig1} will probably not be figure 1 in the final version. Don't do this for figure filenames either!
 
 \longtodo{This is a long todo that will be in the main body of the text.}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/elephant.pdf}
+    \caption{Elephants never forget.}
+    \label{fig:elephant}
+\end{figure}
 
 \section{Results}\label{sec:results}
 
