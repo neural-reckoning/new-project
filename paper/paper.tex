@@ -15,6 +15,7 @@
 \usepackage{microtype}      % microtypography
 \usepackage{graphicx}
 \usepackage{lmodern}
+\usepackage{soul}           % use for higlighting command
 
 \usepackage{cleveref}       % use for references
 
@@ -42,6 +43,7 @@ anchorcolor = black}
 % use \todo to put notes in the margin to co-authors, or \longtodo to put in main body
 \newcommand{\todo}[1]{\marginpar{\scriptsize\color{red}\raggedright #1}}
 \newcommand{\longtodo}[1]{{\color{red} #1}}
+\newcommand{\comment}[2]{\hl{#1}\todo{#2}} % highlight text and margin comment
 
 % use these to format differential equations to make Dan happy because the d should not be italic
 \newcommand{\ud}{\mathrm{d}}
